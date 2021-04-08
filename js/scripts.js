@@ -1,5 +1,6 @@
 
     window.onscroll = function() {myFunction()};
+    let profil = document.getElementById('profile')
 
     function myFunction() {
         var x = document.body.scrollTop || document.documentElement.scrollTop;
@@ -15,9 +16,13 @@
 
             if (x > 100){
                 nav.classList.add("navbar-shrink")
+                profil.classList.remove("profil-vision")
+                profil.classList.add("profil-vision-retour")
                 }
             else{
-                nav.className = "navbar navbar-expand-lg navbar-dark fixed-top"
+                nav.classList.remove('navbar-shrink')
+                profil.classList.remove("profil-vision-retour")
+                profil.classList.add("profil-vision")
             }
 
             if(x < 700){
