@@ -159,84 +159,40 @@
 
 #main > .division {
   height: fit-content;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-#main > .division:nth-child(5) {
-  background-color: #c7fffc;
-}
-#main > .division:nth-child(2) {
-  background-color: #fff;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 #main > .division:nth-child(3) {
-  background-color: #c7fffc;
+  background-color: #dbfdfd;
 }
 #main > .division:nth-child(4) {
-  height: 80vh;
-  background-color: #ffffff9d;
+  background-color: #ffffff;
 }
-@media screen and (max-width: 750px) {
-  #main > .division:nth-child(4) {
-    height: 60vh !important;
-  }
+#main > .division:nth-child(6) {
+  background-color: #e2fffd;
 }
-#main > .division:nth-child(4) > .container {
-  height: 90vh;
-}
-@media screen and (max-width: 1700px) {
-  #main > .division:nth-child(4) > .container {
-    margin-top: 80px;
-  }
-}
-@media screen and (max-width: 1300px) {
-  #main > .division:nth-child(4) > .container {
-    margin-top: 60px;
-  }
-}
-@media screen and (max-width: 800px) {
-  #main > .division:nth-child(4) > .container {
-    margin-top: 80px;
-  }
-}
-@media screen and (max-width: 767px) {
-  #main > .division:nth-child(4) > .container {
-    transform: translateY(-70px);
-  }
-}
-#main > .division:nth-child(4) > .container > form {
-  height: 50% !important;
-}
-#main > .division:nth-child(4) > .container > form > .h-100 {
-  height: 100% !important;
-}
-@media screen and (max-width: 750px) {
-  #main > .division:nth-child(4) > .container > form > .h-100 {
-    height: 30% !important;
-  }
-}
-#main > .division:nth-child(4) > .container > form > .h-100 > input, #main > .division:nth-child(4) > .container > form > .h-100 select {
-  height: 29.5%;
-}
-@media screen and (max-width: 750px) {
-  #main > .division:nth-child(4) > .container > form > .h-100 > input, #main > .division:nth-child(4) > .container > form > .h-100 select {
-    height: 10%;
-  }
-}
-#main > .division:nth-child(4) > .container > form > .col-6 {
-  margin-top: 30px;
-  height: 40px;
-}
-#main > .division:nth-child(4) > .container > form > .col-6 > .btn {
-  background-color: transparent !important;
-  padding: 15px;
-}
-#main > .division:nth-child(4) > .container > form > .col-6 > .btn:hover {
-  transition: 0.5s linear;
-  background-color: #36fef4 !important;
+#main > .division:nth-child(7) {
+  background-color: #36fef4;
 }
 
+#footer {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
 #footer > .container > .row {
-  margin-left: 8%;
+  justify-self: center !important;
+}
+#footer > .container > .row > .col-md-4 {
+  text-align: center;
+  font-size: 50px;
+}
+#footer > .container > .row > .col-md-4 > * {
+  color: black;
+}
+#footer > .container > .row > .col-md-4 > *:hover {
+  transition: all 500ms linear;
+  opacity: 0.6;
+  color: #ff0000;
 }
 
 .ajuste {
