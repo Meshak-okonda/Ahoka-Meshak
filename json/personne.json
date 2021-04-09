@@ -1,0 +1,14 @@
+{
+    "Personne":{
+        "nom":"Ahoka",
+        "post":"Okonda",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi unde culpa non necessitatibus nobis minus, dignissimos harum quaerat! Expedita similique vel iure iste dolores illo quo distinctio? Ab, cumque non? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi laudantium delectus, in totam hic non ad laboriosam reiciendis dolore quisquam nihil aut ratione possimus ea sunt impedit consequatur ex dolores!",
+        "photo":"img/profil.jpg",
+        "liens":{
+            "git":"",
+            "facebook":"",
+            "twitter":"",
+            "stack":""
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "Competences" : [
+        {
+            "nom" : "ui",
+            "icon" : "fab fa-uikit icons"
+        },
+        {
+            "nom" :"bootstrap",
+            "icon" : "fab fa-bootstrap icons"
+        },
+        {
+        "nom" :"js",
+        "icon" : "fab fa-js-square icons"
+        },
+        {
+        "nom" :"html",
+        "icon" : "fab fa-html5 icons"
+        },
+        {
+            "nom" :"css",
+            "icon" : "fab fa-css3-alt icons"
+        },
+        {
+            "nom" : "python",
+            "icon" : "fab fa-python icons"
+        },
+        {
+        "nom" : "php",
+        "icon" : "fab fa-php icons"
+        },
+        {
+        "nom" :"sass",
+            "icon" : "fab fa-sass icons"
+        }
+    ]
+}

@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger container__link" href="#main">
-                <img src="/img/profil.jpg" alt="Photo de profil" class="container__link__img" id="profile" />
+                <img src="img/profil.jpg" alt="Photo de profil" class="container__link__img" id="profile" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -40,11 +40,8 @@
     <main id="main">
         <header class="first">
             <div class="container first__element">
-                <div class="first__element__item"><h1>Vous cherchez un <b id="typing">Vous cherchez un</b> <span> |</span>? </h1></div>
+                <div class="first__element__item"><h1 id="typing">Pour une réalisation ?</h1></div>
                 <div class="first__element__icon">
-                    <script>
-                        let type = document.getElementById('typing')
-                    </script>
                     <i class="fas fa-long-arrow-alt-down"></i>
                 </div>
                 <a class="btn btn-xl text-uppercase js-scroll-trigger btn-outline-light bg-transparent first__element__btn" href="#Contact">Contactez moi </a >
@@ -62,32 +59,45 @@
                                 <div class="row text-center mr-auto">
                                     <div class="conteneur">
                                         <h3 class="h3">Survolez un element</h3>
-                                        <div class="circle">
-                                          <div class="point_general point1">
-                                            <span class="texte"><i class="fab fa-js-square icons"></i>
-                                            </span>
-                                          </div>
-                                              <div class="point_general point2">
-                                                <span class="texte"><i class="fab fa-js-square icons"></i></span>
-                                              </div>
-                                              <div class="point_general point3">
-                                                 <span class="texte"><i class="fab fa-js-square icons"></i></span>
-                                              </div>
-                                              <div class="point_general point4">
-                                                <span class="texte"><i class="fab fa-html5 icons"></i></span>
-                                              </div>
-                                              <div class="point_general point5">
-                                                <span class="texte"><i class="fab fa-css3-alt icons"></i></span>
-                                              </div>
-                                              <div class="point_general point6">
-                                                <span class="texte"><i class="fab fa-python icons"></i></span>
-                                              </div>
-                                              <div class="point_general point7">
-                                                <span class="texte"><i class="fab fa-php icons"></i></span>
-                                              </div>
-                                              <div class="point_general point8">
-                                                <span class="texte"><i class="fab fa-sass icons"></i></span>
-                                              </div>
+                                        <div class="circle" id="competence">
+                                              <script>
+                                                  let competence = document.getElementById('competence')
+
+                                                fetch('https://api.jsonbin.io/b/6070867f181177735ef526ff').then(function(response) {
+                                                    if(response.ok) {
+                                                      response.json().then(function(json) {
+                                                        text = json;
+                                                        let a = 1;
+                                                        text = text.Competences
+
+                                                        for (element of text){
+                                                            // création d'une div
+                                                            let div = document.createElement('div')
+                                                            div.className = "point_general point" + a
+                                                            // création du span container de l'icon
+                                                            let spanInterieur = document.createElement('span')
+                                                            spanInterieur.className = 'texte'
+
+                                                            // création de l'icone grace à la classe de l'icon fontawesome
+                                                            let icon = document.createElement('i')
+                                                            icon.className = element.icon
+
+                                                            // incorporation de l'icon dans l'element
+                                                            spanInterieur.appendChild(icon)
+
+                                                            // création de tout les element
+                                                            div.appendChild(spanInterieur)
+
+                                                            // creation de l'element dans le div contenaire
+                                                            competence.appendChild(div)
+                                                            a++;
+                                                        }
+                                                      });
+                                                    } else {
+                                                      console.log('Le serveur Json a comme probleme : ' + response.status + ': ' + response.statusText);
+                                                    }
+                                                  })
+                                              </script>
                                           </div>
                                       </div>
                                 </div>
@@ -131,7 +141,7 @@
                     <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
                         <a data-toggle="modal" href="#portfolioModal1">
-                            <img src="img/Clavier.jpg" class="d-block w-100 for-modal" alt="...">
+                            <img src="img/Back-ground.jpg" class="d-block w-100 for-modal" alt="...">
                         </a>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
@@ -164,43 +174,79 @@
                 </div>
                 <form class="row g-3">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <input type="email" class="form-control" id="floatingMail" placeholder="name@example.com" required>
+                        <label for="floatingInput">E - Mail</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                        <input type="text" class="form-control" id="floatingNom" placeholder="Password" required>
+                        <label for="floatingPassword">Nom</label>
                       </div>
                       <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                          <option selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" required>
+                          <option value="0"selected></option>
+                          <option value="1">Réalisation d'un projet</option>
+                          <option value="2">Réalisation d'un devis</option>
+                          <option value="3">Consultation</option>
+                          <option value="4">Autre</option>
                         </select>
-                        <label for="floatingSelect">Works with selects</label>
+                        <label for="floatingSelect">Choisir une raison</label>
                       </div>
                       <div class="form-floating">
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Comments</label>
+                        <label for="floatingTextarea2">Dites moi plus ... (optionnel)</label>
                       </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-info btn-lg btn-outline-dark" type="submit" id="submit" onclick="chargement()">Envoyer</button>
+                        <button class="btn btn-lg btn-outline-dark" type="submit" id="submit" onclick="chargement()" >Envoyer</button>
                         <script>
+                            let mail = document.getElementById('floatingMail')
+                            let nom = document.getElementById('floatingNom')
+                            let raison = document.getElementById('floatingSelect')
+                            let detail = document.getElementById('floatingTextarea2')
+                            let btn = document.getElementById('submit')
+                            console.log(raison.value)
                             function chargement(){
-                                let btn = document.getElementById('submit')
+                                console.log(10)
+                                console.log(raison.value)
                                 btn.innerText = ""
                                 btn.innerHTML = `<div class="spinner-border text-info" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                   </div>`
-                                setInterval(e=>{
+                                  if (verif()){
+                                setTimeout(e=>{
                                     btn.innerHTML = ` `
-                                    btn.classList.add("is-valid")
+                                    btn.style.backgroundColor = "green"
+                                    btn.innerText = "Merci"
+                                }, 2000)
+                                setTimeout(e=>{
+                                    btn.style.backgroundColor = "transparent"
+                                    reinit()
                                     btn.innerText = "Envoyer"
-                                }, 2000)
-                                setInterval(e=>{
-                                    btn.classList.remove.name = "is-valid"
-                                }, 2000)
+                                }, 4000)
+                            }else{
+                                setTimeout(e=>{
+                                    btn.innerHTML = ` `
+                                    btn.style.backgroundColor = "red"
+                                    btn.innerText = "Erreur"
+                                },1000)
+                                setTimeout(e=>{
+                                    btn.innerHTML = ` `
+                                    btn.style.backgroundColor = "transparent"
+                                    btn.innerText = "Envoyer"
+                                },2000)
+                            }
+                            }
+                            function reinit(){
+                                mail.value = ""
+                                nom.value = ""
+                                detail.innerText = ""
+                                raison.value = 0
+                            }
+                            function verif(){
+                                if (mail.value.trim() == "" || nom.value.trim() == ""|| raison.value == 0) 
+                                { return false}
+                                else{
+                                    return true
+                                }
                             }
                         </script>
                     </div>
@@ -211,11 +257,30 @@
             <div class="container">
                 <div class="row" style="margin-bottom: 30px;">
                     <div class="col-md-5">
-                        <img src="img/profil.jpg" alt="" class="img-fluid" style="border-radius: 100% !important">
+                        <img src="" alt="" class="img-fluid" style="border-radius: 10% !important" id="imgPersonne">
                     </div>
-                    <div class="col-md-7" style="top: 40% !important"><div style="margin-bottom: 30px;">  Nom <br> Post-Nom </div>
-                    <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi unde culpa non necessitatibus nobis minus, dignissimos harum quaerat! Expedita similique vel iure iste dolores illo quo distinctio? Ab, cumque non? <br>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi laudantium delectus, in totam hic non ad laboriosam reiciendis dolore quisquam nihil aut ratione possimus ea sunt impedit consequatur ex dolores!</div>
+                    <div class="col-md-7"><div style="font-size: 35px;"> <p id="nomPersonne"></p><p id="postPersonne"></p> </div>
+                    <br><p id="descriptifPersonne" style="font-size: 20px;"></p></div>
+                    <script>
+                        let image = document.getElementById('imgPersonne')
+                        let nomP = document.getElementById('nomPersonne')
+                        let post = document.getElementById('postPersonne')
+                        let desc = document.getElementById('descriptifPersonne')
+                          fetch('https://api.jsonbin.io/b/607088e5ceba85732671c7d9').then(function(response) {
+                            if(response.ok) {
+                              response.json().then(function(json) {
+                                text = json;
+                                text = text.Personne
+                                image.src = text.photo
+                                nomP.innerText = text.nom
+                                post.innerText = text.post
+                                desc.innerText = text.description
+                              });
+                            } else {
+                              console.log('Le serveur renvoi l\'erreur : ' + response.status + ': ' + response.statusText);
+                            }
+                          })
+                    </script>
                 </div>
             </div>
         </div>

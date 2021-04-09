@@ -74,7 +74,7 @@ $color : #36fef4 ;
     padding-bottom: 6rem;
     text-align: center;
     color: #fff;
-    background-image: url("../img/Clavier.jpg");
+    background-image: url("https://imagizer.imageshack.com/img922/6296/HRUgBE.jpg");
     background-repeat: no-repeat;
     background-attachment: scmastheadroll;
     background-position: center center;
@@ -89,7 +89,13 @@ $color : #36fef4 ;
             padding-bottom: 24rem;
         }
       }
-      @media (max-width: 768px) {
+      @media (max-width: 1468px) {
+        &{
+            padding-top: 20rem;
+            padding-bottom: 1.5rem;
+        }
+      }
+      @media (max-width: 760px) {
         &{
             padding-top: 3rem;
             padding-bottom: 1.5rem;
@@ -106,7 +112,7 @@ $color : #36fef4 ;
             line-height: 1.5rem;
             margin-bottom: 25px;
             & h1{
-                & #typing{
+                & > #typing{
                 white-space: nowrap;
                 overflow: hidden;
                 width: 30em;
@@ -154,14 +160,21 @@ $color : #36fef4 ;
     }
 }
 
+input, select, textarea{
+    &:focus{
+        border-color: $color;
+    }
+}
+
 #main > .division{
     height: fit-content;
     padding-top: 100px;
     padding-bottom: 100px;
     &:nth-child(3){background-color: #dbfdfd;}
     &:nth-child(4){background-color: #ffffff;}
-    &:nth-child(6){background-color: #e2fffd;}
-    &:nth-child(7){ background-color: $color;}
+}
+#a_propos {
+    background-color: #02fceb !important;
 }
 
 #footer{
@@ -226,6 +239,18 @@ $color : #36fef4 ;
     &:hover{
         opacity: 0.5;
         transition: opacity 2s linear;
+    }
+}
+
+h1{
+    @media screen and (max-width: 2500px) {
+        font-size: 100px !important;
+    }
+    @media screen and (max-width: 1200px) {
+        font-size: 70px !important;
+    }
+    @media screen and (max-width: 800px) {
+        font-size: 40px !important;
     }
 }
 
