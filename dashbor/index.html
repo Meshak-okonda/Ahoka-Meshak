@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dashbord</title>
+</head>
+<body>
+    <div class="container">
+        <div class="titre titre--modification">DashBord for Meshak Okonda</div>
+        <div class="corp" id="corp">
+            <script>
+                let corp = document.getElementById("corp")
+                fetch("http://localhost:3000/message").then(function(response) {
+                    if(response.ok) {
+                      response.json().then(function(json) {
+                        text = json;
+                        console.log(text)
+                        let list = []
+                        for(element of text){
+                            let card = document.createElement("div")
+                            card.className = "card card--modification"
+
+                            let titre = document.createElement("h3")
+                            titre.className = "card-title card-title--modification"
+                            titre.innerHTML = "Nom : " + element.nom + "<br>" + "Raison : " + element.raison
+
+                            let corp = document.createElement("p")
+                            corp.className = "card-corp card-corp--modification"
+                            corp.innerText = element.message
+
+                            let end = document.createElement("a")
+                            end.className = "card-end card-end--modification"
+                            end.href = "mailto:" + element.mail
+                            end.innerText = element.mail
+
+                            card.appendChild(titre)
+                            card.appendChild(corp)
+                            card.appendChild(end)
+                            list.push(card)
+                        }
+                        for(element of list){
+                            corp.appendChild(element)
+                        }
+                      });
+                    } else {
+                      console.log('Le serveur renvoi l\'erreur : ' + response.status + ': ' + response.statusText);
+                    }
+                  })
+            </script>
+        </div>
+    </div>
+</body>
+</html>

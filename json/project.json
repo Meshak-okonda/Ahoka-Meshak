@@ -1,12 +1,36 @@
 {
-    "projets" :{
-        "project" :{
-            "titre":"",
-            "sous-titre":"",
-            "photo":"",
-            "description":"",
-            "date":"",
-            "id" :""
+    "projets" :[
+        {
+            "titre":"Reproduire la maquette d'un formulaire",
+            "sous_titre":"Le code HTML doit respecter le standard HTML 5\n Le code doit passer le test du validateur 3WC avec succès \n Les fichiers doivent être bien nommés \n Le code du projet doit être bien organisé",
+            "photo":"project/formulaire_Css.png",
+            "description":"J'ai produit un formulaire de création de compte à partir de la maquete de celle-ci !",
+            "date":"Février 2021",
+            "id" :"portfolioModal1"
+        },
+        {
+            "titre":"Reproduction de la page d'accueil et la page Emploi du site web de Kinshasa Digital",
+            "sous_titre":"Projet réalisé pendant 2 semaine et demi",
+            "photo":"project/realiser_le_site_de_la_Kda.png",
+            "description":"A partir d'une maquette fournie par le graphiste, j'ai créer les pages d'accueil et page emploi de site internet https://kinshasadigital.com/ !",
+            "date":"Février 2021",
+            "id" :"portfolioModal2"
+        },
+        {
+            "titre":"Réaliser une liste de contacts",
+            "sous_titre":"",
+            "photo":"project/formulaire_javascript.png",
+            "description":"A partir d'une maquette j'ai réaliser une liste de contacts !",
+            "date":"Mars 2021",
+            "id" :"portfolioModal3"
+        },
+        {
+            "titre":"Styliser des pages HTML avec du CSS",
+            "sous_titre":"Styliser les 2 pages HTML réalisée.",
+            "photo":"project/projet-histoire.png",
+            "description":"Je devais styliser les deux pages HTML que j'ai créé dans le projet \"Structurer un contenu HTML\" !",
+            "date":"Février 2021",
+            "id" :"portfolioModal4"
         }
-    }
+    ]
 }
