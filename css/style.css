@@ -59,6 +59,19 @@
   margin-top: 5% !important;
 }
 
+#typing {
+  font-style: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 11.5em;
+  animation: type 3s steps(60, end);
+}
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
+
 .first {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
@@ -108,26 +121,15 @@
   line-height: 1.5rem;
   margin-bottom: 25px;
 }
-.first__element__item h1 > #typing {
-  white-space: nowrap;
-  overflow: hidden;
-  width: 30em;
-  animation: type 3s steps(60, end);
-}
-@keyframes type {
-  from {
-    width: 0;
-  }
+.first__element span {
+  animation: blink 1s infinite;
 }
 @keyframes blink {
   to {
     opacity: 0.1;
   }
 }
-.first__element__item h1 span {
-  animation: blink 1s infinite;
-}
-.first__element__icon {
+.first__icon {
   animation-name: icon__bouge;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -149,17 +151,17 @@
   }
 }
 @media (min-width: 768px) {
-  .first__element__icon {
+  .first__icon {
     font-size: 2.25rem;
     font-style: italic;
     line-height: 2.25rem;
     margin-bottom: 2rem;
   }
 }
-.first__element__btn {
+.first__btn {
   padding: 1.25rem 2.5rem !important;
 }
-.first__element__btn:hover {
+.first__btn:hover {
   background-color: #36fef4 !important;
 }
 
@@ -218,32 +220,6 @@ input:focus, select:focus, textarea:focus {
   position: relative;
   color: black;
   background-color: transparent;
-}
-
-.h3 {
-  font-size: 30px !important;
-  position: absolute;
-  width: 15%;
-  left: 43%;
-  top: 33%;
-  animation: colorChange linear 2s infinite;
-}
-@keyframes colorChange {
-  0% {
-    color: blue;
-  }
-  25% {
-    color: black;
-  }
-  50% {
-    color: azure;
-  }
-  75% {
-    color: darkcyan;
-  }
-  90% {
-    color: darkmagenta;
-  }
 }
 
 .for-modal {

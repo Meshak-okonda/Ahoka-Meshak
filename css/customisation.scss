@@ -126,3 +126,19 @@
     top:138px;
     left:-16px;
   }
+
+  .h3{
+    font-size: 30px !important;
+    position: absolute;
+    width: 15%;
+    left: 43%;
+    top: 33%;
+    animation: colorChange linear 2s infinite;
+    @keyframes colorChange {
+        0%{color: blue;}
+        25%{ color: black;}
+        50%{ color: azure;}
+        75%{ color: darkcyan;}
+        90%{ color: darkmagenta;}
+    }
+}

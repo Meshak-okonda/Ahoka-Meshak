@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" crossorigin="anonymous"></script>
     <!-- Fichier de css pour la div -->
     <link rel="stylesheet" href="css/cust.css" />
     <!-- Les fichier d'affichage -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/competence.css" />
     <link rel="stylesheet" href="css/customisation.css">
@@ -37,10 +37,11 @@
         </div>
     </nav>
 
+
     <main id="main">
         <header class="first">
             <div class="container first__element">
-                <div class="first__element__item"><h1 id="typing">Pour une réalisation ?</h1></div>
+                <div class="first__element__item"><h1 id="typing">Pour plus d'informations !<span>|</span></h1></div>
                 <div class="first__element__icon">
                     <i class="fas fa-long-arrow-alt-down"></i>
                 </div>
@@ -58,48 +59,10 @@
                             <div class="ajuste">
                                 <div class="row text-center mr-auto">
                                     <div class="conteneur">
-                                        <h3 class="h3">Survolez un element</h3>
+                                        <h3 class="indicateur">Survolez un element</h3>
                                         <div class="circle" id="competence">
-                                              <script>
-                                                  let competence = document.getElementById('competence')
-
-                                                fetch('https://api.jsonbin.io/b/6070867f181177735ef526ff').then(function(response) {
-                                                    if(response.ok) {
-                                                      response.json().then(function(json) {
-                                                        text = json;
-                                                        let a = 1;
-                                                        text = text.Competences
-
-                                                        for (element of text){
-                                                            // création d'une div
-                                                            let div = document.createElement('div')
-                                                            div.className = "point_general point" + a
-                                                            // création du span container de l'icon
-                                                            let spanInterieur = document.createElement('span')
-                                                            spanInterieur.className = 'texte'
-
-                                                            // création de l'icone grace à la classe de l'icon fontawesome
-                                                            let icon = document.createElement('i')
-                                                            icon.className = element.icon
-
-                                                            // incorporation de l'icon dans l'element
-                                                            spanInterieur.appendChild(icon)
-
-                                                            // création de tout les element
-                                                            div.appendChild(spanInterieur)
-
-                                                            // creation de l'element dans le div contenaire
-                                                            competence.appendChild(div)
-                                                            a++;
-                                                        }
-                                                      });
-                                                    } else {
-                                                      console.log('Le serveur Json a comme probleme : ' + response.status + ': ' + response.statusText);
-                                                    }
-                                                  })
-                                              </script>
-                                          </div>
-                                      </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div id="navbar">
@@ -129,7 +92,6 @@
                     </div>
                 </div>
             </div>
-            <span id="Projets1"></span>
         </div>
         <div class="division" id="Projets">
             <div class="container">
@@ -139,51 +101,6 @@
                 </div>
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" id="carParent">
-                        <script>
-                            let carParent = document.getElementById('carParent')
-                            fetch('https://api.jsonbin.io/b/6074b43e5b165e19f61e2ce0/1').then(function(response) {
-                                if(response.ok) {
-                                  response.json().then(function(json) {
-                                    text = json;
-                                    text = text.projets
-                                    var car = `<div class="carousel-item" id="carEl">
-                                        <a data-toggle="modal" href="#portfolioModal1" id="carLien">
-                                            <img src="img/Back-ground.jpg" class="d-block w-100 for-modal" alt="" id="carImg">
-                                        </a>
-                                    </div>`
-                                    let a = 1
-                                    for (element of text){
-                                        console.log(element.id)
-                                        console.log(element.photo)
-                                        carParent.innerHTML += car
-                                        let carEl = document.getElementById("carEl")
-                                        let carLien = document.getElementById("carLien")
-                                        let carImg = document.getElementById('carImg')
-                                        if (a == 1){
-                                            carEl.classList.add("active")
-                                            carEl.id = " "
-                                            carLien.href = "#" + element.id
-                                            carLien.id = " "
-                                            carImg.setAttribute("src", "/" + element.photo) 
-                                            carImg.setAttribute("alt", element.titre)
-                                            carImg.id = " "
-                                            a++;
-                                        }
-                                        else{
-                                            carEl.id = " "
-                                            carLien.href = "#" + element.id
-                                            carLien.id = " "
-                                            carImg.src = "/" + element.photo
-                                            carImg.alt = element.titre
-                                            carImg.id = " "
-                                            }
-                                        }
-                                        });
-                                        } else {
-                                        console.log('Le serveur Json a comme probleme : ' + response.status + ': ' + response.statusText);
-                                        }
-                                    })
-                        </script>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -227,58 +144,6 @@
                       </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button class="btn btn-lg btn-outline-dark" type="submit" id="submit" onclick="chargement()" >Envoyer</button>
-                        <script>
-                            let mail = document.getElementById('floatingMail')
-                            let nom = document.getElementById('floatingNom')
-                            let raison = document.getElementById('floatingSelect')
-                            let detail = document.getElementById('floatingTextarea2')
-                            let btn = document.getElementById('submit')
-                            console.log(raison.value)
-                            function chargement(){
-                                console.log(10)
-                                console.log(raison.value)
-                                btn.innerText = ""
-                                btn.innerHTML = `<div class="spinner-border text-info" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                  </div>`
-                                  if (verif()){
-                                setTimeout(e=>{
-                                    btn.innerHTML = ` `
-                                    btn.style.backgroundColor = "green"
-                                    btn.innerText = "Merci"
-                                }, 2000)
-                                setTimeout(e=>{
-                                    btn.style.backgroundColor = "transparent"
-                                    reinit()
-                                    btn.innerText = "Envoyer"
-                                }, 4000)
-                            }else{
-                                setTimeout(e=>{
-                                    btn.innerHTML = ` `
-                                    btn.style.backgroundColor = "red"
-                                    btn.innerText = "Erreur"
-                                },1000)
-                                setTimeout(e=>{
-                                    btn.innerHTML = ` `
-                                    btn.style.backgroundColor = "transparent"
-                                    btn.innerText = "Envoyer"
-                                },2000)
-                            }
-                            }
-                            function reinit(){
-                                mail.value = ""
-                                nom.value = ""
-                                detail.innerText = ""
-                                raison.value = 0
-                            }
-                            function verif(){
-                                if (mail.value.trim() == "" || nom.value.trim() == ""|| raison.value == 0) 
-                                { return false}
-                                else{
-                                    return true
-                                }
-                            }
-                        </script>
                     </div>
                 </form>
             </div>
@@ -320,99 +185,19 @@
         <div class="container">
             <div class="row" style="margin-bottom: 30px;">
                 <div class="col-md-4 col-lg-4 col-sm-4">
-                    <a href=""><i class="fab fa-html5"></i></a>
+                    <a href="https://github.com/Meshak-okonda"><i class="fab fa-github"></i></i></a>
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-4">
-                    <a href=""><i class="fab fa-html5"></i></a>
+                    <a href="https://stackoverflow.com/users/15026171/meshak77"><i class="fab fa-stack-overflow"></i></a>
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-4">
-                    <a href=""><i class="fab fa-html5"></i></a>
+                    <a href="https://twitter.com/MeshakOkonda"><i class="fab fa-twitter"></i></a>
                 </div>
+                
             </div>
         </div>
     </footer>
-    <!-- Projet Models-->
-        <!-- Projet 1-->
 
-        <script>
-
-            let body = document.getElementById('body')
-            fetch('https://api.jsonbin.io/b/6074b43e5b165e19f61e2ce0/1').then(function(response) {
-                if(response.ok) {
-                  response.json().then(function(json) {
-                    text = json;
-                    text = text.projets
-                    console.log(text)
-
-                    for (element of text){
-
-                        let modal = `<div class="portfolio-modal modal fade" id="element" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="close-modal" data-dismiss="modal"><i class="fas fa-times"></i></div>
-                                    <div class="container">
-                                        <div class="row justify-content-center">
-                                            <div class="col-lg-8">
-                                                <div class="modal-body">
-                                                    <!-- Project Details Go Here-->
-                                                    <h2 class="text-uppercase" id="elementTitre">Project Name</h2>
-                                                    <p class="item-intro text-muted" id="elementSousTitre">Lorem ipsum dolor sit amet consectetur.</p>
-                                                    <img class="img-fluid d-block mx-auto" src="img/profil.jpg" alt="" id="elementImage"/>
-                                                    <p id="elementDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore sed atque temporibus eaque itaque nesciunt corrupti distinctio architecto nobis vel similique, possimus obcaecati quibusdam aut in, repellendus consequuntur? Impedit, animi. Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                                    <ul class="list-inline">
-                                                        <li id="elementDate">Date: January 2020</li>
-                                                    </ul>
-                                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                                        <i class="fas fa-times mr-1"></i>
-                                                        Close Project
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>elementImage
-                        </div>`
-
-
-                        body.innerHTML += modal
-
-                        // le contenaire parent
-                        let modalElement = document.getElementById('element')
-                        modalElement.id = element.id
-
-                        // création du titre de la modal
-                        let titre = document.getElementById('elementTitre')
-                        titre.innerText = element.titre
-                        titre.id = " "
-
-                        // Création du sous-titre de la modal
-                        let sousTitre = document.getElementById('elementSousTitre')
-                        sousTitre.innerText = element.sous_titre
-                        sousTitre.id = " "
-
-                        // image
-                        let image = document.getElementById('elementImage')
-                        image.src = element.photo
-                        image.id = " "
-
-                        // description
-                        let description = document.getElementById('elementDescription')
-                        description.innerText = element.description
-                        description.id = " "
-                        // date
-                        let date = document.getElementById('elementDate')
-                        date.innerText = element.date
-                        date.id = " "
-                    }
-                    
-                        });
-                        } else {
-                        console.log('Le serveur Json a comme probleme : ' + response.status + ': ' + response.statusText);
-                        }
-                    })
-
-        </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
@@ -420,5 +205,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/competence.js"></script>
+<script src="js/appel.js"></script>
 <!-- <script src="js/icons.js"></script> -->
 </html>

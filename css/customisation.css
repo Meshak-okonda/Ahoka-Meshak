@@ -140,4 +140,31 @@
   left: -16px;
 }
 
+
+.indicateur {
+  font-size: 30px !important;
+  position: absolute;
+  text-align: center;
+  width: 15%;
+  left: 43%;
+  top: 33%;
+  animation: colorChange linear 4s infinite;
+}
+@keyframes colorChange {
+  0% {
+    color: blue;
+  }
+  25% {
+    color: black;
+  }
+  50% {
+    color: azure;
+  }
+  75% {
+    color: darkcyan;
+  }
+  90% {
+    color: darkmagenta;
+  }
+}
 /*# sourceMappingURL=customisation.css.map */
