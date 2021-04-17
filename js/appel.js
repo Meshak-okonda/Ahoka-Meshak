@@ -210,3 +210,25 @@ fetch('https://api.jsonbin.io/b/6074b43e5b165e19f61e2ce0/1').then(function(respo
             console.log('Le serveur Json a comme probleme : ' + response.status + ': ' + response.statusText);
             }
         })
+
+
+// Information personnel
+
+let image = document.getElementById('imgPersonne')
+    let nomP = document.getElementById('nomPersonne')
+    let post = document.getElementById('postPersonne')
+    let desc = document.getElementById('descriptifPersonne')
+        fetch('https://api.jsonbin.io/b/607088e5ceba85732671c7d9/1').then(function(response) {
+        if(response.ok) {
+            response.json ().then(function(json) {
+            text = json;
+            text = text.Personne
+            image.src = text.photo
+            nomP.innerText = text.nom
+            post.innerText = text.post
+            desc.innerText = text.description
+            });
+        } else {
+            console.log('Le serveur renvoi l\'erreur : ' + response.status + ': ' + response.statusText);
+        }
+        })

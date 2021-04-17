@@ -45,7 +45,7 @@
                 <div class="first__element__icon">
                     <i class="fas fa-long-arrow-alt-down"></i>
                 </div>
-                <a class="btn btn-xl text-uppercase js-scroll-trigger btn-outline-light bg-transparent first__element__btn" href="#Contact">Contactez moi </a >
+                <a class="btn btn-xl text-uppercase js-scroll-trigger btn-outline-light bg-transparent first__element__btn" href="#Contact">Contactez moi !</a >
             </div>
         </header>
         <div class="division" id="Competences">
@@ -156,26 +156,6 @@
                     </div>
                     <div class="col-md-7"><div style="font-size: 35px;"> <p id="nomPersonne"></p><p id="postPersonne"></p> </div>
                     <br><p id="descriptifPersonne" style="font-size: 20px;"></p></div>
-                    <script>
-                        let image = document.getElementById('imgPersonne')
-                        let nomP = document.getElementById('nomPersonne')
-                        let post = document.getElementById('postPersonne')
-                        let desc = document.getElementById('descriptifPersonne')
-                          fetch('https://api.jsonbin.io/b/607088e5ceba85732671c7d9').then(function(response) {
-                            if(response.ok) {
-                              response.json ().then(function(json) {
-                                text = json;
-                                text = text.Personne
-                                image.src = text.photo
-                                nomP.innerText = text.nom
-                                post.innerText = text.post
-                                desc.innerText = text.description
-                              });
-                            } else {
-                              console.log('Le serveur renvoi l\'erreur : ' + response.status + ': ' + response.statusText);
-                            }
-                          })
-                    </script>
                 </div>
             </div>
         </div>
