@@ -144,10 +144,10 @@
 .indicateur {
   font-size: 30px !important;
   position: absolute;
-  text-align: centergit ;
+  text-align: center;
   width: 15%;
   left: 43%;
-  top: 33%;
+  top: 33%;   
   animation: colorChange linear 4s infinite;
 }
 @keyframes colorChange {
