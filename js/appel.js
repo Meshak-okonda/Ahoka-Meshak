@@ -197,7 +197,7 @@ fetch('https://api.jsonbin.io/b/6074b43e5b165e19f61e2ce0/1').then(function(respo
                             </div>
                         </div>
                     </div>
-                </div>elementImage
+                </div>
             </div>`
 
         for (element of text){
