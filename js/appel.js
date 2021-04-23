@@ -218,7 +218,7 @@ let image = document.getElementById('imgPersonne')
     let nomP = document.getElementById('nomPersonne')
     let post = document.getElementById('postPersonne')
     let desc = document.getElementById('descriptifPersonne')
-        fetch('https://api.jsonbin.io/b/607088e5ceba85732671c7d9/1').then(function(response) {
+        fetch('https://api.jsonbin.io/b/607ac7d2ee971419c4db7f48').then(function(response) {
         if(response.ok) {
             response.json ().then(function(json) {
             text = json;
